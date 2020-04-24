@@ -1,0 +1,194 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+#nav-bar
+{
+position: sticky;
+top: 0;
+z-index: 10;
+}
+.navbar-brand img
+{
+  height: 40px;
+  padding-left: 30px;
+}
+.navbar-nav li
+{
+  padding: 0 10px;
+}
+.navbar-nav li a
+{
+  float: right;
+  text-align: left;
+}
+#nav-bar ul li a:hover
+{
+  color: #007bff!important;
+}
+.navbar
+{
+  background: #fff;
+}
+.navbar-toggler
+{
+  border: none!important;
+}
+.nav-link
+{
+  color: #555!important;
+  font-weight: 600px;
+  font-size: 20px;
+}
+#headerSlider
+{
+  width:100%;
+}
+.carousel-caption
+{
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: initial!important;
+}
+.carousel-caption h4
+{
+  color: #fff;
+  font-size: 40px;
+  font-family: sans-serif;
+}
+#about
+{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: #555;
+}
+#about .btn
+{
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.about-content
+{
+  padding-top: 20px;
+}
+.col-md-6 img
+{
+  height: 300px;
+  padding-left: 200px;
+}
+#services
+{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(map.jpeg);
+  background-size: cover;
+  background-position: center;
+  color: #efefef !important;
+  background-attachment: fixed;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#services h1
+{
+  text-align: center;
+  color: #efefef;
+  padding-bottom: 10px;
+}
+#services h1::after
+{
+  content: '';
+  background: #efefef;
+  display: block;
+  height: 3px;
+  width: 200px;
+  margin: 20px auto 5px;
+}
+.icon img
+{
+  height: 100px;
+  margin: 20px auto;
+}
+.services
+{
+  margin-top: 20px;
+}
+#services
+{
+  font-size: 14px;
+  margin-top: 20px;
+  color: #ccc;
+}
+.services .col-md-3:hover
+{
+  background: #007bff;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+#melindungi h1
+{
+  text-align: center;
+  color: #000;
+  padding-bottom: 10px;
+}
+#melindungi h1::after
+{
+  content: '';
+  background: #000;
+  display: block;
+  height: 3px;
+  width: 200px;
+  margin: 20px auto 5px;
+}
+.melindungi .col-md-3:hover
+{
+  background: #ffffe0;
+  cursor: pointer;
+  transition: 0.7s;
+}
+#ayo
+{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.8)),url(cek.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #efefef !important;
+  background-attachment: fixed;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#ayo h1
+{
+  text-align: right;
+  color: #efefef;
+  padding-bottom: 10px;
+}
+#ayo
+{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: #555;
+}
+#ayo .btn
+{
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.ayo-content
+{
+  padding-top: 5px;
+}
+.col-md-6 img
+{
+  height: 300px;
+  padding-left: 200px;
+}
+#footer
+{
+  background: #333;
+  color: #fff;
+  padding: 12px;
+}
+.fa-heart-o
+{
+  margin: 3px;
+  color: red;
+}
