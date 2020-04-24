@@ -63,48 +63,44 @@ include('config.php');
     }
     </style>
 </head>
-<body><section id="nav-bar">
-  <nav class="navbar navbar-expand-lg navbar-light ">
-<a class="navbar-brand" href="#"><img src="telkom.png"</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarNav">
-<ul class="navbar-nav ml-auto">
-  <li class="nav-item active">
-    <a class="nav-link" href="index.php">COVID-19</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="about.php">ABOUT ME</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="check.php">CHECK UP</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="tampil_data.php">PASIEN</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="login_perawat.php">PERAWAT</a>
-  </li>
-</ul>
-</div>
-</nav>
-
-
+<body>
+  <section id="nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+  <a class="navbar-brand" href="#"><img src="telkom.png"</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+  <ul class="navbar-nav ml-auto">
+		<li class="nav-item active">
+	    <a class="nav-link" href="beranda.php">BERANDA</a>
+	  </li>
+	  <li class="nav-item active">
+	    <a class="nav-link" href="perawat.php">PERAWAT</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="pasien.php">PASIEN</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="logout.php">LOGOUT</a>
+	  </li>
+  </ul>
+  </div>
+  </nav>
 	<div class="container" style="margin-top:20px">
 		<h2 class="card-title"><i class="fas fa-edit"></i>Daftar Pasien</h2>
 		<hr>
 		<table class="table table-striped table-hover table-sm table-bordered">
 			<thead class="thead-dark">
 				<tr>
-          <th>NO.</th>
-          <th>NAMA </th>
-					<th>USIA</th>
-					<th>KELAMIN</th>
-					<th>ALAMAT</th>
-					<th>TELEPON</th>
-					<th>STATUS</th>
-          <!-- <th>ACTION</th> -->
+					<th>NO.</th>
+          <th>NAMA</th>
+          <th>USIA</th>
+          <th>KELAMIN</th>
+          <th>ALAMAT</th>
+          <th>TELEPON</th>
+          <th>STATUS</th>
+          <th>ACTION</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -121,18 +117,17 @@ include('config.php');
 						<!-- //menampilkan data perulangan -->
 						<tr>
               <td><?php echo $no;  ?></td>
-						  <td><?php echo $data['nama'];  ?></td>
+              <td><?php echo $data['nama'];  ?></td>
 						  <td><?php echo $data['usia'];  ?></td>
 						  <td><?php echo $data['kelamin'];  ?></td>
 						  <td><?php echo $data['alamat'];  ?></td>
-							<td><?php echo $data['telp'];  ?></td>
-							<td><?php echo $data['status'];  ?></td>
-
-							<!-- <td> -->
-                                    <!-- <a href="#edit<?php echo $data['id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit</a> -->
-                                    <!-- <a href="#del<?php echo $data['id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a> -->
-                                    <!-- <?php include('modal_form.php'); ?> -->
-						        <!-- </td> -->
+              <td><?php echo $data['telp'];  ?></td>
+              <td><?php echo $data['status'];  ?></td>
+							<td>
+                                    <a href="#edit<?php echo $data['id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit</a> 
+                                    <a href="#del<?php echo $data['id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                    <?php include('modal_form.php'); ?>
+						        </td>
 						</tr>
 						<?php
 						$no++;
@@ -149,45 +144,33 @@ include('config.php');
 			<tbody>
 		</table>
 
-        <!-- <div> -->
+        <div>
             <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-title="tambahBuku">Tambah Data</button> -->
-        <!-- </div> -->
+        </div>
         <div id="myModal" class="modal fade" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="tambah_buku.php" method="post">
+                    <form action="tambah_petugas.php" method="post">
                         <div class="modal-header">
-                            <h5 class="modal-title">Tambah Data Buku</h5>
+                            <h5 class="modal-title">Tambah Data Petugas</h5>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label class="control-label">Kode Buku:</label>
-                                <input type="text" name="kode"class="form-control">
+                                <label class="control-label">Nama:</label>
+                                <input type="text" name="nama"class="form-control">
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Judul Buku:</label>
-                                <input type="text" name="judul" class="form-control">
+                                <label class="control-label">Telepon:</label>
+                                <input type="text" name="telp" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Penerbit:</label>
-                                <input type="text" name="penerbit" class="form-control">
+                                <label class="control-label">Username:</label>
+                                <input type="text" name="username" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Pengarang:</label>
-                                <input type="text" name="pengarang" class="form-control">
-                            </div>
-                            <div class="form-group">Ringkasan</label>
-                            <input type="text" name="ringkasan" class="form-control">
-                            </div>
-														<div class="form-group">Cover</label>
-                            <input type="text" name="cover" class="form-control">
-                            </div>
-														<div class="form-group">Stok</label>
-                            <input type="number" name="stok" class="form-control">
-                            </div>
-														<div class="form-group">Kategori</label>
-                            <input type="text" name="id_kategori" class="form-control">
+                                <label class="control-label">Password:</label>
+                                <input type="text" name="password" class="form-control">
                             </div>
 
                         </div>

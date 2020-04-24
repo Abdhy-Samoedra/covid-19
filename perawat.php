@@ -5,7 +5,7 @@ include('config.php');
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tampil Data Pasien</title>
+	<title>Tampil Data Perawat</title>
     <!-- CSS online dari bootstrap -->
 		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -71,20 +71,17 @@ include('config.php');
 </button>
 <div class="collapse navbar-collapse" id="navbarNav">
 <ul class="navbar-nav ml-auto">
+	<li class="nav-item active">
+    <a class="nav-link" href="beranda.php">BERANDA</a>
+  </li>
   <li class="nav-item active">
-    <a class="nav-link" href="index.php">COVID-19</a>
+    <a class="nav-link" href="perawat.php">PERAWAT</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="about.php">ABOUT ME</a>
+    <a class="nav-link" href="pasien.php">PASIEN</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="check.php">CHECK UP</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="tampil_data.php">PASIEN</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="login_perawat.php">PERAWAT</a>
+    <a class="nav-link" href="logout.php">LOGOUT</a>
   </li>
 </ul>
 </div>
@@ -92,25 +89,22 @@ include('config.php');
 
 
 	<div class="container" style="margin-top:20px">
-		<h2 class="card-title"><i class="fas fa-edit"></i>Daftar Pasien</h2>
+		<h2 class="card-title"><i class="fas fa-edit"></i>Daftar Perawat</h2>
 		<hr>
 		<table class="table table-striped table-hover table-sm table-bordered">
 			<thead class="thead-dark">
 				<tr>
           <th>NO.</th>
           <th>NAMA </th>
-					<th>USIA</th>
-					<th>KELAMIN</th>
-					<th>ALAMAT</th>
-					<th>TELEPON</th>
-					<th>STATUS</th>
+					<th>USERNAME</th>
+					<th>PASSWORD</th>
           <!-- <th>ACTION</th> -->
 				</tr>
 			</thead>
 			<tbody>
 				<?php
 				//query ke database SELECT tabel t_buku urut berdasarkan id yang paling besar
-				$sql = mysqli_query($koneksi, "SELECT * FROM user ORDER BY id DESC") or die(mysqli_error($koneksi));
+				$sql = mysqli_query($koneksi, "SELECT * FROM perawat ORDER BY id DESC") or die(mysqli_error($koneksi));
 				//jika query diatas menghasilkan nilai > 0 maka menjalankan script di bawah if...
 				if(mysqli_num_rows($sql) > 0){
 					//membuat variabel $no untuk menyimpan nomor urut
@@ -122,11 +116,8 @@ include('config.php');
 						<tr>
               <td><?php echo $no;  ?></td>
 						  <td><?php echo $data['nama'];  ?></td>
-						  <td><?php echo $data['usia'];  ?></td>
-						  <td><?php echo $data['kelamin'];  ?></td>
-						  <td><?php echo $data['alamat'];  ?></td>
-							<td><?php echo $data['telp'];  ?></td>
-							<td><?php echo $data['status'];  ?></td>
+						  <td><?php echo $data['username'];  ?></td>
+						  <td><?php echo $data['password'];  ?></td>
 
 							<!-- <td> -->
                                     <!-- <a href="#edit<?php echo $data['id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit</a> -->
